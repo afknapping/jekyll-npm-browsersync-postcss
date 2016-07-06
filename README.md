@@ -153,6 +153,11 @@ ln -s _config/.jekyllrc.yml _config.yml
 - css is not build on gh-pages, so needs to be in ./css and checked in so it gets copied on jekyll build
 - after postcss, css/ needs to be copied into _site/
 
+    "postcss_compile": "./node_modules/.bin/postcss --config _config/.postcssrc.json",
+    "postcss_copy": "cp -r css/* _site/css/",
+    "postcss_watch_compile_copy": "./node_modules/.bin/nodemon --ignore _site/ --ignore node_modules/ --ext scss --exec 'npm run postcss_compile && npm run postcss_copy'",
+
+    "start": "npm run postcss_compile && npm run jekyll_compile_dev && npm run jekyll_watch_compile_dev & postcss_watch_compile_copy & npm run browsersync_serve"
 
 
 
