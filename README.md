@@ -32,7 +32,18 @@ tba
 
 e93f473
 
-## `_config/` folder
+## watch and compile
+
+- compile without watching
+- script:
+    "jekyll_compile": "jekyll build",
+    "jekyll_compile_dev": "jekyll build --config _config.yml,_config_dev.yml",
+
+- [nodemon](http://nodemon.io/)
+
+
+
+./node_modules/.bin/nodemon --ignore _site/ --watch ./ -e 'html,md' -x 'npm run jekyll_compile'",
 
 
 
