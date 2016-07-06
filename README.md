@@ -4,6 +4,7 @@
 
 tba
 
+
 ## Overview
 
 - use terminal apis of jekyll and postcss
@@ -25,7 +26,7 @@ tba
 - npm install browser-sync --save
 - [Browsersync: Get started in 5 minutes](https://www.browsersync.io/#install)
 - browser-sync start --server --files "css/*.css" --> browser-sync start --server --files "_site" 
-- ./node_modules/.bin/browser-sync start --server "_site/"
+- ./node_modules/.bin/browser-sync start --server "_site/" --files "_site"
     - url is wrong :/
 - jekyll serve also did watch and triggered compile on file changes
 - add `node_modules/` to `.gitignore`
@@ -39,13 +40,27 @@ e93f473
     "jekyll_compile": "jekyll build",
     "jekyll_compile_dev": "jekyll build --config _config.yml,_config_dev.yml",
 
-- [nodemon](http://nodemon.io/)
+- [nodemon](http://nodemon.io/) to watch source files
+  - npm install nodemon --save
+- [By default nodemon monitors the current working directory.](https://github.com/remy/nodemon#monitoring-multiple-directories)
+- [By default, nodemon looks for files with the .js, .coffee, .litcoffee, and .json extensions.](https://github.com/remy/nodemon#specifying-extension-watch-list)
+    - specify extensions `./node_modules/.bin/nodemon --ext html,md,yml`
+- [nodemon can also be used to execute and monitor other programs.](https://github.com/remy/nodemon#running-non-node-scripts)
+    - ./node_modules/.bin/nodemon --ext html,md,yml --exec 'npm run jekyll_compile_dev'
+    - endless loop :/
+- [ignore _site, so compiled files do not trigger re-run. only trigger compile of source files](https://github.com/remy/nodemon#ignoring-files) 
+    - ./node_modules/.bin/nodemon --ignore _site/ --ext html,md,yml --exec 'npm run jekyll_compile_dev'
+- exclude:
+    - node_modules
+    - package.json
+    - README.md
 
 
+## watch, compile, serve
 
-./node_modules/.bin/nodemon --ignore _site/ --watch ./ -e 'html,md' -x 'npm run jekyll_compile'",
-
-
+    "jekyll_watch_compile_dev": "./node_modules/.bin/nodemon --ignore _site/ --ext html,md,yml --exec 'npm run jekyll_compile_dev'",
+    "browsersync_serve": "./node_modules/.bin/browser-sync start --server '_site' --files '_site'",
+    "start": "npm run jekyll_watch_compile_dev & browsersync_serve"
 
 
 
