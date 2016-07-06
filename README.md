@@ -143,6 +143,23 @@ npm install postcss postcss-cli autoprefixer postcss-import postcss-simple-vars 
     - darken()
     - refactor calculation to vanilla css calc()
 
+
+## automate
+
+- css is not build on gh-pages, so needs to be in ./css and checked in so it gets copied on jekyll build
+- after postcss, css/ needs to be copied into _site/
+
+- folders:
+
+_assets_src
+    - mystyles.scss
+    - _mypartial.scss
+assets
+    - mystyles.css
+_site/assets
+    - mystyles.css
+
+
 ========================================
 DEPRECATED
 
