@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "jekyll_compile": "jekyll build",
     "jekyll_compile_dev": "jekyll build --config _config.yml,_config_dev.yml",
-
-    "start": "./node_modules/.bin/browser-sync start --server '_site/'"
+    "jekyll_watch_compile_dev": "./node_modules/.bin/nodemon --ignore _site/ --ignore node_modules/ --ext html,md,yml --exec 'npm run jekyll_compile_dev'",
+    "browsersync_serve": "./node_modules/.bin/browser-sync start --server '_site' --files '_site'",
+    "start": "npm run jekyll_watch_compile_dev & npm run browsersync_serve"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/filtercake/jekyll-npm-browsersync-postcss#readme",
   "dependencies": {
-    "browser-sync": "^2.13.0"
+    "browser-sync": "^2.13.0",
+    "nodemon": "^1.9.2"
   }
 }
