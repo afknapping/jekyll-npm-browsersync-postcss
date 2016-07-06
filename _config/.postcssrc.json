@@ -1,0 +1,8 @@
+{
+    "use": ["autoprefixer", "postcss-import", "postcss-simple-vars", "postcss-sassy-mixins", "postcss-nested"],
+    "input": "css/main.scss",
+    "output": "_site/css/main.css",
+    "autoprefixer": {
+        "browsers": "> 5%"
+    }
+}

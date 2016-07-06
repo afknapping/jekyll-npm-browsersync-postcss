@@ -23,7 +23,14 @@
   },
   "homepage": "https://github.com/filtercake/jekyll-npm-browsersync-postcss#readme",
   "dependencies": {
+    "autoprefixer": "^6.3.7",
     "browser-sync": "^2.13.0",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
+    "postcss": "^5.0.21",
+    "postcss-cli": "^2.5.2",
+    "postcss-import": "^8.1.2",
+    "postcss-nested": "^1.0.0",
+    "postcss-sassy-mixins": "^2.0.0",
+    "postcss-simple-vars": "^3.0.0"
   }
 }
