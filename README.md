@@ -62,10 +62,44 @@ e93f473
     "browsersync_serve": "./node_modules/.bin/browser-sync start --server '_site' --files '_site'",
     "start": "npm run jekyll_watch_compile_dev & browsersync_serve"
 
+## cleanup
+
+- configs: jekyll, browsersync. postcss will also have config.\
+
+- why use rc files? [Configuration file - Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Configuration_file) cmd-f "runcom"
+
+- [Browsersync Command Line Usage](https://www.browsersync.io/docs/command-line): 
+     browser-sync init                Create a configuration file
+
+- clean up existing stuff first (jekyll), then add browsersync
+- _config
+    - .jekyllrc.yml
+    - .jekyll_devrc.yml
+    - .browsersyncrc.?
+    - .postcssrc.?
+
+- ./node_modules/.bin/browser-sync init
+
+```
+[BS] Config file created bs-config.js
+[BS] To use it, in the same directory run: browser-sync start --config bs-config.js
+```
+
+- mv bs-config.js _config/.browsersyncrc.js
+- browser-sync start --config _config/.browsersyncrc.js
+- "browsersync_serve": "./node_modules/.bin/browser-sync start --server '_site' --files '_site'",
+- "browsersync_serve": "./node_modules/.bin/browser-sync start --config _config/.browsersyncrc.js",
+
+- [Browsersync options: server](https://www.browsersync.io/docs/options/#option-server)
+    - // Serve files from the app directory
+      server: "app"
 
 
-==========
 
+
+
+
+========================================
 DEPRECATED
 
 
