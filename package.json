@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "jekyll serve --baseurl ''"
+    "start": "./node_modules/.bin/browser-sync start --server '_site/'"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/filtercake/jekyll-npm-browsersync-postcss/issues"
   },
-  "homepage": "https://github.com/filtercake/jekyll-npm-browsersync-postcss#readme"
+  "homepage": "https://github.com/filtercake/jekyll-npm-browsersync-postcss#readme",
+  "dependencies": {
+    "browser-sync": "^2.13.0"
+  }
 }
