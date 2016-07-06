@@ -1,15 +1,51 @@
-# Jekyll via npm scripts, using PostCSS, served via Browsersync
+# `jekyll new` migrated to npm scripts, browsersync and postcss with as few changes as possible.
 
-## Why
+Still builds on GitHub\*, see
 
-tba
+**http://www.filtercake.com/jekyll-npm-browsersync-postcss/**
+
+\* (via checking in compiled css)
 
 
-## Overview
+### Why
+
+- use all the cool frontend-via-npm stuff
+- get better at using npm scripts
+- try out how far postcss can compile scss (pretty far)
+
+
+### Overview
 
 - use terminal apis of jekyll and postcss
 - do not use built in watchers but nodemon
 - serve with browsersync
+
+### tl;dr
+
+- install all the packages locally
+- executables are in `node_modules/.bin/`
+- make one-liners from those executables and save them as `"scripts"` in the `package.json`
+- wrap those tasks in watchers with nodemon
+- chain the watchers together in `"npm start"`
+
+With node-sass, this would be seamless (will maybe bild that version too).
+
+For postcss the sass needed some refactoring:
+
+- `//` comments produce errors
+- fix imports: full filenames, don't use sass import dir
+- imports must come first, so variables needed to go into a partial (makes sense anyway)
+- [interpolated variables in postcss-simple-vars have differing syntax :/](https://github.com/postcss/postcss-simple-vars#interpolation)...
+- ...but was not used that often and was able to refactor calculations to vanilla css `calc()`
+- font declaration shorthand broke
+- darken() and lighten() were missing
+
+All in all pretty amazing how far it works :)
+
+
+
+
+# What follows is the raw log, not a real readme... blogpost is in the works
 
 ## commanding with npm
 
