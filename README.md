@@ -95,9 +95,53 @@ e93f473
       server: "app"
 
 
+## postcss
+
+- npm compile task
+
+  "postcss_compile": "postcss input output"
+
+- [PostCSS - a tool for transforming CSS with JavaScript](http://postcss.org/)
+    - postcss
+    - [postcss/postcss-cli: CLI for postcss](https://github.com/postcss/postcss-cli)
+    - sass-replace: [precss](https://github.com/jonathantneal/precss), postcss-scss
+    - autoprefixer
+
+    npm install postcss postcss-cli postcss-scss autoprefixer precss --save
+
+- $ ./node_modules/.bin/postcss --config _config/.postcssrc.json
+
+
+- comments break, mixins break, interpolated vars break
+- do some reading
+
+- postcss postcss-cli autoprefixer  
+
+## [From Sass to PostCSS](https://pawelgrzybek.com/from-sass-to-postcss/)
+
+- postcss-import postcss-simple-vars postcss-nested postcss-sassy-mixins
+- postcss-mixins differs in syntax :/ so use postcss-sassy-mixins, via [PostCSS.parts | A searchable catalog of PostCSS plugins](http://postcss.parts/tag/sass)
 
 
 
+npm install postcss postcss-cli autoprefixer postcss-import postcss-simple-vars postcss-nested postcss-sassy-mixins --save
+
+
+- basically works
+    - // comments produce errors
+    - fix imports: full filenames, don't use sass import dir
+    - interpolated variables have differing syntax :/
+        - [postcss/postcss-simple-vars: PostCSS plugin for Sass-like variables](https://github.com/postcss/postcss-simple-vars#interpolation)
+          There is special syntax if you want to use variable inside CSS words:
+
+            $prefix: my-company-widget
+
+            $prefix { }
+            $(prefix)_button { }
+
+    - font declaration
+    - darken()
+    - refactor calculation to vanilla css calc()
 
 ========================================
 DEPRECATED
