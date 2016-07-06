@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+
+    "jekyll_compile": "jekyll build",
+    "jekyll_compile_dev": "jekyll build --config _config.yml,_config_dev.yml",
+
     "start": "./node_modules/.bin/browser-sync start --server '_site/'"
   },
   "repository": {
