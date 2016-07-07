@@ -1,8 +1,8 @@
 {
-    "use": ["autoprefixer", "postcss-import", "postcss-simple-vars", "postcss-sassy-mixins", "postcss-nested"],
-    "input": "css/main.scss",
+    "use": ["autoprefixer"],
+    "input": "css/main_roughmix.postcss",
     "output": "css/main.css",
     "autoprefixer": {
-        "browsers": "> 5%"
+        "browsers": "> 1%"
     }
 }

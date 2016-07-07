@@ -17,10 +17,8 @@ body {
   font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #111;
   background-color: #fdfdfd;
-  -webkit-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
-  -webkit-font-kerning: normal;
-          font-kerning: normal;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
 }
 
 /**
@@ -151,6 +149,7 @@ pre > code {
  */
 /* line 154, _sass/_base.scss */
 .wrapper {
+  max-width: -webkit-calc(800px - (30px * 2));
   max-width: calc(800px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
@@ -161,6 +160,7 @@ pre > code {
 @media screen and (max-width: 800px) {
   /* line 154, _sass/_base.scss */
   .wrapper {
+    max-width: -webkit-calc(800px - (30px));
     max-width: calc(800px - (30px));
     padding-right: 15px;
     padding-left: 15px;
@@ -331,16 +331,19 @@ pre > code {
 
 /* line 129, _sass/_layout.scss */
 .footer-col-1 {
+  width: -webkit-calc(35% - (30px / 2));
   width: calc(35% - (30px / 2));
 }
 
 /* line 134, _sass/_layout.scss */
 .footer-col-2 {
+  width: -webkit-calc(20% - (30px / 2));
   width: calc(20% - (30px / 2));
 }
 
 /* line 139, _sass/_layout.scss */
 .footer-col-3 {
+  width: -webkit-calc(45% - (30px / 2));
   width: calc(45% - (30px / 2));
 }
 
@@ -348,10 +351,12 @@ pre > code {
   /* line 145, _sass/_layout.scss */
   .footer-col-1,
   .footer-col-2 {
+    width: -webkit-calc(50% - (30px / 2));
     width: calc(50% - (30px / 2));
   }
   /* line 151, _sass/_layout.scss */
   .footer-col-3 {
+    width: -webkit-calc(100% - (30px / 2));
     width: calc(100% - (30px / 2));
   }
 }
@@ -360,6 +365,7 @@ pre > code {
   /* line 158, _sass/_layout.scss */
   .footer-col {
     float: none;
+    width: -webkit-calc(100% - (30px / 2));
     width: calc(100% - (30px / 2));
   }
 }
