@@ -30,6 +30,8 @@ Still builds on GitHub\*, see
 
 With node-sass, this would be seamless (will maybe bild that version too).
 
+*update: it is now jekyll-npm-nodesass-postcss-browsersync :D*
+
 For postcss the sass needed some refactoring:
 
 - `//` comments produce errors
@@ -194,6 +196,25 @@ ln -s _config/.jekyllrc.yml _config.yml
     "postcss_watch_compile_copy": "./node_modules/.bin/nodemon --ignore _site/ --ignore node_modules/ --ext scss --exec 'npm run postcss_compile && npm run postcss_copy'",
 
     "start": "npm run postcss_compile && npm run jekyll_compile_dev && npm run jekyll_watch_compile_dev & postcss_watch_compile_copy & npm run browsersync_serve"
+
+
+## add sass
+
+- [node-sass](https://www.npmjs.com/package/node-sass)
+- npm install node-sass --save
+- ./node_modules/.bin/
+- CLI: https://www.npmjs.com/package/node-sass#command-line-interface
+
+The input can be either a single .scss or .sass, or a directory. If the input is a directory the --output flag must also be supplied.
+
+./node_modules/.bin/node-sass --output-style expanded --source-comments --include-path _sass --follow  css/main.scss css/main_roughmix.css
+
+
+    "sass_compile": "./node_modules/.bin/node-sass --output-style expanded --source-comments --include-path _sass --follow css/main.scss css/main_roughmix.postcss",
+    "sass_watch_compile": "./node_modules/.bin/nodemon --ignore _site/ --ignore node_modules/ --ext scss --exec 'npm run sass_compile'",
+
+
+
 
 
 
