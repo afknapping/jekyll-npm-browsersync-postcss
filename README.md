@@ -6,6 +6,21 @@ Still builds on GitHub\*, see
 
 \* (via checking in compiled css)
 
+### how to use
+
+- fork
+
+- for `username.github.io`...
+    - switch to master branch
+    - `_config/.jekyllrc.yml`
+        - url
+        - baseurl
+- for other repos
+    - keep working in gh-pages branch
+    - `_config/.jekyllrc.yml`
+        - url
+        - baseurl
+
 
 ### Why
 
